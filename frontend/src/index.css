@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FDFBF7;
+  --surface: #F5F3EC;
+  --text: #1A2E24;
+  --text-2: #5C7063;
+  --border: #E2DFD6;
+  --brand: #2A5948;
+  --brand-hover: #214739;
+  --brand-light: #E9EFEA;
+  --accent: #E07A5F;
+  --warning: #D4A373;
+  --success: #4A7C59;
+}
+
+html, body, #root {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body { min-height: 100vh; }
+
+.font-display { font-family: 'Fraunces', 'IBM Plex Sans', serif; letter-spacing: -0.02em; }
+.font-child { font-family: 'Nunito', sans-serif; }
+
+/* Stage theming helpers */
+[data-stage="child"] { --s-bg: #FCF9F2; --s-primary: #E07A5F; --s-border: #F3E8D6; }
+[data-stage="teen"]  { --s-bg: #F5F7F6; --s-primary: #52796F; --s-border: #DCE3E0; }
+[data-stage="adult"] { --s-bg: #FDFBF7; --s-primary: #234233; --s-border: #E5E7E4; }
+
+/* Shadcn token shims kept minimal so existing UI components still render */
+@layer base {
+  :root {
+    --background: 42 40% 98%;
+    --foreground: 152 30% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 152 30% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 152 30% 14%;
+    --primary: 152 37% 25%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 45 29% 94%;
+    --secondary-foreground: 152 30% 14%;
+    --muted: 45 29% 94%;
+    --muted-foreground: 138 8% 40%;
+    --accent: 15 65% 63%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 74% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 22% 86%;
+    --input: 45 22% 86%;
+    --ring: 152 37% 25%;
+    --radius: 0.75rem;
+  }
+}
+@layer base {
+  * { @apply border-border; }
+}
+
+/* Subtle entrance */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.anim-fade-up { animation: fadeUp 0.4s ease-out both; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up { animation: none; }
+}
+
+/* Scrollbar – thin, muted */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #D8D4C5; border-radius: 999px; }

@@ -1,0 +1,161 @@
+{
+  "theme": {
+    "archetype": "1 - Organic & Earthy (Light Theme)",
+    "rationale": "Medical and health applications require trust, warmth, and calm. Instead of generic clinical teals, we use an organic Sage/Deep Pine paired with Warm Ivory to create a grounded, premium, and comforting experience. The visual language evolves across life stages to match the user's cognitive and emotional maturity.",
+    "colors": {
+      "base": {
+        "background": "#FDFBF7",
+        "surface": "#F5F3EC",
+        "text_primary": "#1A2E24",
+        "text_secondary": "#5C7063",
+        "border": "#E2DFD6"
+      },
+      "brand": {
+        "primary": "#2A5948",
+        "primary_hover": "#214739",
+        "primary_light": "#E9EFEA",
+        "accent": "#E07A5F",
+        "warning": "#D4A373",
+        "success": "#4A7C59"
+      },
+      "stages": {
+        "child": {
+          "background": "#FCF9F2",
+          "card_bg": "#FFFFFF",
+          "primary": "#E07A5F",
+          "secondary": "#F4A261",
+          "border": "#F3E8D6",
+          "shadow": "0px 8px 24px rgba(224, 122, 95, 0.12)"
+        },
+        "teen": {
+          "background": "#F5F7F6",
+          "card_bg": "#FFFFFF",
+          "primary": "#52796F",
+          "secondary": "#84A59D",
+          "border": "#DCE3E0",
+          "shadow": "0px 4px 12px rgba(82, 121, 111, 0.08)"
+        },
+        "adult": {
+          "background": "#FDFBF7",
+          "card_bg": "#FFFFFF",
+          "primary": "#234233",
+          "secondary": "#2A5948",
+          "border": "#E5E7E4",
+          "shadow": "0px 2px 8px rgba(35, 66, 51, 0.05)"
+        }
+      }
+    }
+  },
+  "typography": {
+    "font_families": {
+      "headings": "'Cabinet Grotesk', sans-serif",
+      "body": "'IBM Plex Sans', sans-serif",
+      "child_specific": "'Nunito', sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl tracking-tight leading-none",
+      "h2": "text-2xl sm:text-3xl tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl tracking-tight",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm leading-normal",
+      "overline": "text-xs font-bold tracking-[0.2em] uppercase"
+    },
+    "rules": {
+      "heading_weight": "font-black for high impact headers, font-medium for subtle subsection headers",
+      "alignment": "Always left-align long paragraphs and form inputs. Center-align only playful child stage elements or key hero metrics.",
+      "contrast": "Ensure minimum 4.5:1 for body text. Use APCA guidelines for critical medical data."
+    }
+  },
+  "components": {
+    "buttons": {
+      "child": "rounded-full px-8 py-4 font-black shadow-[0_8px_0_#C8664D] active:shadow-[0_2px_0_#C8664D] active:translate-y-2 transition-all bg-[#E07A5F] text-white",
+      "teen": "rounded-xl px-6 py-3 font-semibold bg-[#52796F] text-white hover:bg-[#3E5C54] transition-colors shadow-sm",
+      "adult": "rounded-lg px-5 py-2.5 font-medium bg-[#234233] text-white hover:bg-[#1A3226] transition-colors border border-transparent shadow-sm"
+    },
+    "cards": {
+      "child": "rounded-3xl bg-white border-4 border-[#F3E8D6] shadow-[0_12px_32px_rgba(224,122,95,0.1)] p-8",
+      "teen": "rounded-2xl bg-white border border-[#DCE3E0] shadow-sm p-6 hover:shadow-md transition-shadow",
+      "adult": "rounded-lg bg-white border border-[#E5E7E4] shadow-none p-5"
+    },
+    "ai_disclaimer_banner": {
+      "container": "rounded-lg bg-[#FFF9EC] border border-[#F4D08C] p-4 flex items-start gap-4",
+      "icon_color": "text-[#D4A373]",
+      "text": "text-sm text-[#705435] font-medium leading-relaxed",
+      "testing": "data-testid='ai-medical-disclaimer'"
+    },
+    "badges": {
+      "child": "bg-[#FFF0EB] text-[#E07A5F] rounded-full px-4 py-1.5 text-sm font-bold",
+      "teen": "bg-[#EEF2F1] text-[#52796F] rounded-md px-3 py-1 text-xs font-semibold uppercase tracking-wider",
+      "adult": "bg-[#E9EFEA] text-[#2A5948] rounded px-2.5 py-0.5 text-xs font-medium"
+    },
+    "mood_selector": {
+      "container": "flex gap-4 overflow-x-auto pb-4 snap-x",
+      "item": "flex-shrink-0 w-24 h-32 rounded-2xl border-2 border-transparent focus:border-[#E07A5F] flex flex-col items-center justify-center gap-2 bg-[#FDFBF7] snap-center cursor-pointer transition-transform hover:scale-105"
+    },
+    "vaccination_timeline": {
+      "container": "border-l-2 border-[#E5E7E4] ml-4 pl-6 relative space-y-8",
+      "marker_completed": "absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#4A7C59]",
+      "marker_upcoming": "absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-[#D4A373]",
+      "content": "pt-0"
+    }
+  },
+  "layout_patterns": {
+    "spacing_scale": "Use generous padding: p-6 to p-12 for containers to provide breathing room.",
+    "parent_dashboard": {
+      "type": "Bento Tetris Grid",
+      "structure": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8",
+      "usage": "Multi-child cards span 4 cols. Key alerts span full row."
+    },
+    "child_view": {
+      "type": "Single Column Narrative",
+      "structure": "flex flex-col gap-12 max-w-2xl mx-auto",
+      "usage": "Big tappable areas. Horizontal scrolling for 'Stories'."
+    },
+    "teen_adult_view": {
+      "type": "Control Room Grid",
+      "structure": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "usage": "High density data tracking. AI Q&A takes col-span-2 or 3, logs take col-span-1 sidebars."
+    }
+  },
+  "media": {
+    "instructions": "Use these precise URLs for implementation. Do not use generic placeholders. Add descriptive alt tags.",
+    "image_urls": [
+      {
+        "category": "background_adult_parent",
+        "url": "https://static.prod-images.emergentagent.com/jobs/ce18bb16-c298-4dfb-860d-08a7715cc7d7/images/0756ce089aa292c7f63ebd9c00aed3fc8b4fdf9fa26c42ac2fd8a1c3f91f1aa7.png",
+        "description": "Abstract sage and ivory background texture. Use as top header background for Parent and Adult dashboards with a mask-image fade."
+      },
+      {
+        "category": "child_ui_assets",
+        "url": "https://static.prod-images.emergentagent.com/jobs/ce18bb16-c298-4dfb-860d-08a7715cc7d7/images/e7b7e05980ff134088ff6d333e0cc182cfd0e5c09b68ef91c8bf97f9e400eed2.png",
+        "description": "Playful 3D soft clay shapes. Use these transparent assets decorating the edges of the Child interface (My Body, My Feelings)."
+      },
+      {
+        "category": "hero_family_auth",
+        "url": "https://images.pexels.com/photos/18394079/pexels-photo-18394079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Authentic Indian family. Use on the Authentication/Signup page (half-screen layout)."
+      },
+      {
+        "category": "teen_education_header",
+        "url": "https://images.pexels.com/photos/12926479/pexels-photo-12926479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Happy Indian teenager studying. Use as the hero image for the Teen 'Puberty Basics & Education' section."
+      }
+    ],
+    "icons": {
+      "library": "lucide-react",
+      "stroke_width": "2.5 for child (chunky), 2 for teen, 1.5 for adult (precise)"
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure AI Disclaimers text (#705435) on background (#FFF9EC) meets 4.5:1 ratio. Text over images must have a scrim/overlay (bg-black/30).",
+    "motion": "Respect 'prefers-reduced-motion' for mood selector scaling and child big button presses.",
+    "testing_attributes": "Add data-testid to ALL interactive buttons, AI forms, and navigation tabs. E.g., data-testid='login-submit-btn', data-testid='child-mood-[moodname]'"
+  },
+  "instructions_to_main_agent": [
+    "Install `lucide-react` for icons.",
+    "Implement stage-based routing/views utilizing the specific color palettes and border-radii defined above.",
+    "NEVER use Shadcn Card component for the Child view. Build a custom `div` using the `components.cards.child` tailwind rules to ensure the playful, heavy-border look.",
+    "Shadcn components can be used for Adult/Parent views but MUST be customized (border-radius, shadow) to match the JSON.",
+    "For the AI Q&A section, always mount the AI Disclaimer Banner at the top of the chat area."
+  ]
+}
